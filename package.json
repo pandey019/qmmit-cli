@@ -1,6 +1,6 @@
 {
   "name": "qmmit-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Measure how much of a git repository is committed by AI coding agents. Deterministic signature matching, no heuristics, runs fully locally on private repos.",
   "bin": {
     "qmmit-cli": "cli.js",
