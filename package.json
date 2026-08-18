@@ -1,0 +1,35 @@
+{
+  "name": "qmmit-cli",
+  "version": "0.1.0",
+  "description": "Measure how much of a git repository is committed by AI coding agents. Deterministic signature matching, no heuristics, runs fully locally on private repos.",
+  "bin": {
+    "qmmit-cli": "cli.js",
+    "qmmit": "cli.js"
+  },
+  "main": "scan.js",
+  "files": [
+    "cli.js",
+    "scan.js",
+    "signatures.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "git",
+    "ai",
+    "agents",
+    "commits",
+    "claude-code",
+    "cursor",
+    "copilot",
+    "devin",
+    "codex",
+    "aider",
+    "qmmit"
+  ],
+  "homepage": "https://qmmit.dev",
+  "license": "MIT"
+}
