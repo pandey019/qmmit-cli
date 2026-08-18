@@ -31,5 +31,12 @@
     "qmmit"
   ],
   "homepage": "https://qmmit.dev",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandey019/qmmit-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pandey019/qmmit-cli/issues"
+  }
 }
