@@ -1,22 +1,7 @@
 {
   "name": "qmmit-cli",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Measure how much of a git repository is committed by AI coding agents. Deterministic signature matching, no heuristics, runs fully locally on private repos.",
-  "bin": {
-    "qmmit-cli": "cli.js",
-    "qmmit": "cli.js"
-  },
-  "main": "scan.js",
-  "files": [
-    "cli.js",
-    "scan.js",
-    "signatures.js",
-    "README.md",
-    "LICENSE"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
   "keywords": [
     "git",
     "ai",
@@ -28,15 +13,36 @@
     "devin",
     "codex",
     "aider",
-    "qmmit"
+    "qmmit",
+    "code-analysis"
   ],
   "homepage": "https://qmmit.dev",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pandey019/qmmit-cli.git"
   },
   "bugs": {
     "url": "https://github.com/pandey019/qmmit-cli/issues"
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "bin": {
+    "qmmit": "bin/qmmit.js",
+    "qmmit-cli": "bin/qmmit.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "docs/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "scan": "node bin/qmmit.js"
   }
 }

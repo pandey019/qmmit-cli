@@ -6,6 +6,10 @@ Measure how much of a git repository is committed by AI coding agents.
 npx qmmit-cli
 ```
 
+[![CI](https://github.com/pandey019/qmmit-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/pandey019/qmmit-cli/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/qmmit-cli)](https://www.npmjs.com/package/qmmit-cli)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Runs entirely on your machine. Works on private repositories, because nothing is uploaded anywhere.
 
 Powers the public index at **[qmmit.dev](https://qmmit.dev)**.
@@ -72,7 +76,7 @@ No GitHub API, so no rate limits and no token. A 9,000-commit repository takes a
 
 ## Methodology
 
-**Signals** are deterministic string matches only — literal trailers, footers and bot identities that agent tools write about themselves. No heuristics, no style analysis, no perplexity scoring. All of them are in [`signatures.js`](signatures.js), which is written to be read by skeptics.
+**Signals** are deterministic string matches only — literal trailers, footers and bot identities that agent tools write about themselves. No heuristics, no style analysis, no perplexity scoring. All of them are in [`src/signatures.js`](src/signatures.js), which is written to be read by skeptics.
 
 **Exclusions.** CI, dependency and release bots are removed from the denominator by the `[bot]` naming convention rather than a list of known names — every repository has its own release bot. This matters more than it sounds: some repositories are over 40% bot commits, and counting dependabot as AI-written code produces a meaningless number.
 
@@ -119,6 +123,29 @@ Signature conventions change. OpenAI Codex stamped footers from November 2025 to
 ## Requirements
 
 Node 18+ and `git`. Zero dependencies.
+
+## Project layout
+
+```
+bin/qmmit.js          CLI entry point
+src/signatures.js     the detection rules — written to be read by skeptics
+src/git.js            cloning and reading history
+src/analyze.js        aggregation, concentration, assisted/autonomous split
+src/format.js         terminal output
+test/                 23 tests covering detection, exclusion and reporting
+docs/METHODOLOGY.md   what is counted and why
+docs/CORRECTIONS.md   flaws found in this project's own data, and the fixes
+```
+
+## Contributing
+
+The most useful contribution is a missing or wrong signature. See
+[CONTRIBUTING.md](CONTRIBUTING.md). Methodology criticism is welcome — there is
+a documented history of it in [docs/CORRECTIONS.md](docs/CORRECTIONS.md).
+
+```bash
+npm test
+```
 
 ## Licence
 
